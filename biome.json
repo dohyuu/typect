@@ -21,7 +21,11 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "off"
+      },
       "complexity": {
+        "noBannedTypes": "off",
         "noStaticOnlyClass": "off"
       }
     }
