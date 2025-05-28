@@ -1,7 +1,7 @@
+import type { Equal } from "../shared/equal"
+import type { Not } from "../shared/not"
 import { Test } from "../test"
 import type { Contains } from "./contains"
-import type { Equal } from "./equal"
-import type { EqualLength } from "./equal-length"
 import type { Extends } from "./extends"
 import type { GreaterThan } from "./greater-than"
 import type { HasLength } from "./has-length"
@@ -15,9 +15,7 @@ import type { IsInstanceOf } from "./is-instance-of"
 import type { IsNever } from "./is-never"
 import type { IsOneOf } from "./is-one-of"
 import type { IsTruthy } from "./is-truthy"
-import type { LongerThan } from "./longer-than"
 import type { MatchObject } from "./match-object"
-import type { Not } from "./not"
 
 Test<Not<false>>
 
@@ -103,14 +101,6 @@ Test<
   IsInstanceOf<typeof sample, typeof Sample>,
   IsInstanceOf<typeof other, typeof Other>,
   Not<IsInstanceOf<typeof sample, typeof Other>>
->
-
-Test<LongerThan<[1, 2, 3], [1, 2]>, Not<LongerThan<[1, 2], [1, 2, 3]>>>
-
-Test<
-  EqualLength<[1, 2, 3], [1, 2, 3]>,
-  Not<EqualLength<[1, 2, 3], [1, 2]>>,
-  Not<EqualLength<[1, 2, 3], [1, 2, 3, 4]>>
 >
 
 Test<GreaterThan<2, 1>, Not<GreaterThan<2, 2>>, Not<GreaterThan<1, 2>>>
