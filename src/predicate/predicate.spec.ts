@@ -4,6 +4,7 @@ import { Test } from "../test"
 import type { Contains } from "./contains"
 import type { Extends } from "./extends"
 import type { GreaterThan } from "./greater-than"
+import type { GreaterThanOrEqual } from "./greater-than-or-equal"
 import type { HasLength } from "./has-length"
 import type {
   HasProperty,
@@ -103,7 +104,19 @@ Test<
   Not<IsInstanceOf<typeof sample, typeof Other>>
 >
 
-Test<GreaterThan<2, 1>, Not<GreaterThan<2, 2>>, Not<GreaterThan<1, 2>>>
+// biome-ignore format: ""
+Test<
+  GreaterThan<2, 1>,
+  Not<GreaterThan<2, 2>>,
+  Not<GreaterThan<1, 2>>
+>
+
+// biome-ignore format: ""
+Test<
+  GreaterThanOrEqual<2, 1>,
+  GreaterThanOrEqual<2, 2>,
+  Not<GreaterThanOrEqual<1, 2>>
+>
 
 Test<
   Contains<[1, 2, 3], 1>,
@@ -119,7 +132,11 @@ Test<
   Not<HasLength<[1, 2, 3], 2>>
 >
 
-Test<HasPropertyOnly<{ a: 1 }, "a">, Not<HasPropertyOnly<{ a: 1 }, "b">>>
+// biome-ignore format: ""
+Test<
+  HasPropertyOnly<{ a: 1 }, "a">, 
+  Not<HasPropertyOnly<{ a: 1 }, "b">>
+>
 
 Test<
   HasPropertyWith<{ a: 1 }, "a", 1>,
