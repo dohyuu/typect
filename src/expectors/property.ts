@@ -5,4 +5,7 @@ import type { HasProperty } from "../predicate/has-property"
 export interface _ToHaveProperty<K extends string>
   extends Lambda<[s: unknown], boolean> {
   readonly return: HasProperty<Arg0Of<this>, K>
+  readonly text: {
+    "to have property": K
+  }
 }

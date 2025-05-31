@@ -4,4 +4,5 @@ import type { IsTruthy } from "../predicate/is-truthy"
 
 export interface _ToBeTruthy extends Lambda<[s: unknown], boolean> {
   readonly return: IsTruthy<Arg0Of<this>>
+  readonly text: "to be truthy"
 }

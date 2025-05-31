@@ -5,4 +5,5 @@ import type { Not } from "../shared/not"
 
 export interface _ToBeFalsy extends Lambda<[s: unknown], boolean> {
   readonly return: Not<IsTruthy<Arg0Of<this>>>
+  readonly text: "to be falsy"
 }

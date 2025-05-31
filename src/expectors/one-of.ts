@@ -5,4 +5,7 @@ import type { IsOneOf } from "../predicate/is-one-of"
 export interface _ToBeOneOf<T extends unknown[]>
   extends Lambda<[s: unknown], boolean> {
   readonly return: IsOneOf<Arg0Of<this>, T>
+  readonly text: {
+    "to be one of": T
+  }
 }
