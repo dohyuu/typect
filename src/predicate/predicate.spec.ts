@@ -11,11 +11,11 @@ import type {
   HasPropertyOnly,
   HasPropertyWith,
 } from "./has-property"
-import type { IsDefined } from "./is-defined"
 import type { IsInstanceOf } from "./is-instance-of"
 import type { IsNever } from "./is-never"
 import type { IsOneOf } from "./is-one-of"
 import type { IsTruthy } from "./is-truthy"
+import type { IsUndefined } from "./is-undefined"
 import type { MatchObject } from "./match-object"
 
 Test<Not<false>>
@@ -28,14 +28,14 @@ Test<
 >
 
 Test<
-  IsDefined<true>,
-  IsDefined<false>,
-  IsDefined<null>,
-  IsDefined<void>,
-  IsDefined<0>,
-  IsDefined<"">,
-  IsDefined<[]>,
-  Not<IsDefined<undefined>>
+  IsUndefined<undefined>,
+  Not<IsUndefined<true>>,
+  Not<IsUndefined<false>>,
+  Not<IsUndefined<null>>,
+  Not<IsUndefined<void>>,
+  Not<IsUndefined<0>>,
+  Not<IsUndefined<"">>,
+  Not<IsUndefined<[]>>
 >
 
 Test<
