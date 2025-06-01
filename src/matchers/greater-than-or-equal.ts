@@ -1,4 +1,4 @@
-import type { ErrorText } from "../helpers/error-text"
+import type { ErrorText } from "../helpers/error"
 import type { Arg0Of } from "../hkt/args"
 import type { Lambda } from "../hkt/lambda"
 import type { GreaterThanOrEqual } from "../predicate/greater-than-or-equal"

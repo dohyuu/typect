@@ -27,10 +27,12 @@ export type ToBeLessThan<A extends number> = _ToBeLessThan<A>
 export type ToBeLessThanOrEqual<A extends number> = _ToBeLessThanOrEqual<A>
 export type ToBeGreaterThan<A extends number> = _ToBeGreaterThan<A>
 // biome-ignore format: ""
+
 export type ToBeGreaterThanOrEqual<A extends number> = _ToBeGreaterThanOrEqual<A>
 export type ToContain<A extends unknown[]> = _ToContain<A>
 export type ToHaveLength<A extends number> = _ToHaveLength<A>
 // biome-ignore format: ""
+
 export type ToHaveProperty<K extends string> = _ToHaveProperty<K>
 export type ToMatch<A extends object> = _ToMatch<A>
 export type ToBeOneOf<A extends unknown[]> = _ToBeOneOf<A>
