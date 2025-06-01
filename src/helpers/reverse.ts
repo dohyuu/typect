@@ -1,6 +1,6 @@
-import type { _Not } from "../expectors/not"
 import type { Compose } from "../hkt/compose"
 import type { LambdaArg1 } from "../hkt/lambda"
+import type { _Not } from "../matchers/not"
 
 export interface Reverse<F0 extends LambdaArg1<never, boolean>>
   extends Compose<_Not, F0> {
