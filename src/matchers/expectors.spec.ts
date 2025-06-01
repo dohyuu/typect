@@ -60,7 +60,7 @@ TestEqual<Call<_ToBeOneOf<[0, 2, 3]>, [1]>, false>
 
 class Sample {}
 class Other {
-  a: number
+  a: number = 1
 }
 const sample = new Sample()
 const other = new Other()

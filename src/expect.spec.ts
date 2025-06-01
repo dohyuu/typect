@@ -17,7 +17,7 @@ Expect<1, Not.ToEqual<2>>
 
 class One {}
 class Other {
-  a: 1
+  a = 1
 }
 const one = new One()
 Expect<typeof one, To.BeInstanceOf<typeof One>>

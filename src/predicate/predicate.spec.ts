@@ -93,7 +93,7 @@ Test<
 
 class Sample {}
 class Other {
-  x: string
+  x: string = "x"
 }
 const sample = new Sample()
 const other = new Other()
