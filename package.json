@@ -1,9 +1,12 @@
 {
-  "name": "testype",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "typect",
+  "version": "0.0.2",
+  "description": "Type-Level Testing Framework",
+  "main": "./dist/index.d.ts",
+  "module": "./dist/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
