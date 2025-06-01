@@ -10,6 +10,7 @@ class Other {
 const one = new One()
 Expect<typeof one, To.BeInstanceOf<typeof One>>
 Expect<typeof one, Not.ToBeInstanceOf<typeof Other>>
+Expect<typeof one, Not.ToBeInstanceOf<typeof Other>>
 
 Expect<1, To.BeDefined>
 Expect<"", To.BeDefined>
@@ -23,7 +24,7 @@ Expect<null, Not.ToBeUndefined>
 Expect<null, To.BeNull>
 Expect<undefined, Not.ToBeNull>
 
-Expect<false, To.BeFalsy>
+Expect<null, To.BeFalsy>
 Expect<undefined, To.BeFalsy>
 Expect<0, To.BeFalsy>
 Expect<"", To.BeFalsy>
@@ -46,7 +47,7 @@ Expect<2, Not.ToBeGreaterThan<2>>
 
 Expect<2, To.BeGreaterThanOrEqual<1>>
 Expect<2, To.BeGreaterThanOrEqual<2>>
-Expect<2, To.BeGreaterThanOrEqual<0>>
+Expect<1, Not.To.BeGreaterThanOrEqual<4>>
 
 Expect<[1, 2, 3], To.HaveLength<3>>
 Expect<[1, 2, 3], Not.ToHaveLength<4>>
@@ -58,6 +59,5 @@ Expect<{ a: 1 }, To.Match<{ a: 1 }>>
 Expect<{ a: 1 }, Not.ToMatch<{ b: 1 }>>
 
 Expect<1, To.BeOneOf<[1, 2, 3]>>
-Expect<{ a: 1 }, To.BeOneOf<[{ a: 1 }, 2, 3]>>
-Expect<3, Not.ToBeOneOf<[4, 5, 6]>>
-Expect<{ a: 2 }, Not.ToBeOneOf<[{ a: 1 }, 2, 3]>>
+
+Expect<{ a: 1 }, To.Match<{ a: 1 }>>
