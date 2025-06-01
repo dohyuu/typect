@@ -51,29 +51,6 @@ export type ToHaveProperty<K extends string> = _ToHaveProperty<K>
 export type ToMatch<A extends object> = _ToMatch<A>
 export type ToBeOneOf<A extends unknown[]> = _ToBeOneOf<A>
 
-export type NotToEqual<A> = Reverse<_ToEqual<A>>
-// biome-ignore format: ""
-export type NotToBeInstanceOf<A extends Class> = Reverse<_ToBeInstanceOf<A>>
-export type NotToBeDefined = Reverse<_ToBeDefined>
-export type NotToBeUndefined = Reverse<_ToBeUndefined>
-export type NotToBeNull = Reverse<_ToBeNull>
-export type NotToBeFalsy = Reverse<_ToBeFalsy>
-export type NotToBeTruthy = Reverse<_ToBeTruthy>
-// biome-ignore format: ""
-export type NotToBeLessThan<A extends number> = Reverse<_ToBeLessThan<A>>
-// biome-ignore format: ""
-export type NotToBeLessThanOrEqual<A extends number> = Reverse<_ToBeLessThanOrEqual<A>>
-// biome-ignore format: ""
-export type NotToBeGreaterThan<A extends number> = Reverse<_ToBeGreaterThan<A>>
-// biome-ignore format: ""
-export type NotToBeGreaterThanOrEqual<A extends number> = Reverse<_ToBeGreaterThanOrEqual<A>>
-export type NotToContain<A extends unknown[]> = Reverse<_ToContain<A>>
-export type NotToHaveLength<A extends number> = Reverse<_ToHaveLength<A>>
-// biome-ignore format: ""
-export type NotToHaveProperty<K extends string> = Reverse<_ToHaveProperty<K>>
-export type NotToMatch<A extends object> = Reverse<_ToMatch<A>>
-export type NotToBeOneOf<A extends unknown[]> = Reverse<_ToBeOneOf<A>>
-
 // biome-ignore format: ""
 export namespace To {
   export type Equal<A> = _ToEqual<A>
@@ -96,41 +73,24 @@ export namespace To {
 
 // biome-ignore format: ""
 export namespace Not {
-  export type ToEqual<A> = Reverse<_ToEqual<A>>
-  export type ToBeInstanceOf<A extends Class> = Reverse<_ToBeInstanceOf<A>>
-  export type ToBeDefined = Reverse<_ToBeDefined>
-  export type ToBeUndefined = Reverse<_ToBeUndefined>
-  export type ToBeNull = Reverse<_ToBeNull>
-  export type ToBeFalsy = Reverse<_ToBeFalsy>
-  export type ToBeTruthy = Reverse<_ToBeTruthy>
-  export type ToBeLessThan<A extends number> = Reverse<_ToBeLessThan<A>>
-  export type ToBeLessThanOrEqual<A extends number> = Reverse<_ToBeLessThanOrEqual<A>>
-  export type ToBeGreaterThan<A extends number> = Reverse<_ToBeGreaterThan<A>>
-  export type ToBeGreaterThanOrEqual<A extends number> = Reverse<_ToBeGreaterThanOrEqual<A>>
-  export type ToContain<A extends unknown[]> = Reverse<_ToContain<A>>
-  export type ToHaveLength<A extends number> = Reverse<_ToHaveLength<A>>
-  export type ToHaveProperty<K extends string> = Reverse<_ToHaveProperty<K>>
-  export type ToMatch<A extends object> = Reverse<_ToMatch<A>>
-  export type ToBeOneOf<A extends unknown[]> = Reverse<_ToBeOneOf<A>>
+  type Fn<F extends Lambda<any, boolean>> = Reverse<F>
 
-  export namespace To {
-    export type Equal<A> = Reverse<_ToEqual<A>>
-    export type BeInstanceOf<A extends Class> = Reverse<_ToBeInstanceOf<A>>
-    export type BeDefined = Reverse<_ToBeDefined>
-    export type BeUndefined = Reverse<_ToBeUndefined>
-    export type BeNull = Reverse<_ToBeNull>
-    export type BeFalsy = Reverse<_ToBeFalsy>
-    export type BeTruthy = Reverse<_ToBeTruthy>
-    export type BeLessThan<A extends number> = Reverse<_ToBeLessThan<A>>
-    export type BeLessThanOrEqual<A extends number> = Reverse<_ToBeLessThanOrEqual<A>>
-    export type BeGreaterThan<A extends number> = Reverse<_ToBeGreaterThan<A>>
-    export type BeGreaterThanOrEqual<A extends number> = Reverse<_ToBeGreaterThanOrEqual<A>>
-    export type Contain<A extends unknown[]> = Reverse<_ToContain<A>>
-    export type HaveLength<A extends number> = Reverse<_ToHaveLength<A>>
-    export type HaveProperty<K extends string> = Reverse<_ToHaveProperty<K>>
-    export type Match<A extends object> = Reverse<_ToMatch<A>>
-    export type BeOneOf<A extends unknown[]> = Reverse<_ToBeOneOf<A>>
-  }
+  export type ToEqual<A> = Fn<_ToEqual<A>>
+  export type ToBeInstanceOf<A extends Class> = Fn<_ToBeInstanceOf<A>>
+  export type ToBeDefined = Fn<_ToBeDefined>
+  export type ToBeUndefined = Fn<_ToBeUndefined>
+  export type ToBeNull = Fn<_ToBeNull>
+  export type ToBeFalsy = Fn<_ToBeFalsy>
+  export type ToBeTruthy = Fn<_ToBeTruthy>
+  export type ToBeLessThan<A extends number> = Fn<_ToBeLessThan<A>>
+  export type ToBeLessThanOrEqual<A extends number> = Fn<_ToBeLessThanOrEqual<A>>
+  export type ToBeGreaterThan<A extends number> = Fn<_ToBeGreaterThan<A>>
+  export type ToBeGreaterThanOrEqual<A extends number> = Fn<_ToBeGreaterThanOrEqual<A>>
+  export type ToContain<A extends unknown[]> = Fn<_ToContain<A>>
+  export type ToHaveLength<A extends number> = Fn<_ToHaveLength<A>>
+  export type ToHaveProperty<K extends string> = Fn<_ToHaveProperty<K>>
+  export type ToMatch<A extends object> = Fn<_ToMatch<A>>
+  export type ToBeOneOf<A extends unknown[]> = Fn<_ToBeOneOf<A>>
 }
 
 // biome-ignore format: ""
