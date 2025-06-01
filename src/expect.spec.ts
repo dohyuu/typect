@@ -1,4 +1,16 @@
-import { Expect, type Not, type To } from "./expect"
+import {
+  type Asserts,
+  type ConstructorParameters,
+  Expect,
+  type Guards,
+  type Instance,
+  type Items,
+  type Not,
+  type Parameters,
+  type Resolves,
+  type Returns,
+  type To,
+} from "./expect"
 
 Expect<1, To.Equal<1>>
 Expect<1, Not.ToEqual<2>>
@@ -61,3 +73,30 @@ Expect<{ a: 1 }, Not.ToMatch<{ b: 1 }>>
 Expect<1, To.BeOneOf<[1, 2, 3]>>
 
 Expect<{ a: 1 }, To.Match<{ a: 1 }>>
+
+Expect<() => 1, Returns.ToEqual<1>>
+Expect<() => 2, Returns.Not.ToEqual<1>>
+
+Expect<(a: number, b: string) => 2, Parameters.ToEqual<[number, string]>>
+Expect<(a: number, b: string) => 2, Parameters.Not.ToEqual<[1, string]>>
+
+// biome-ignore format: ""
+Expect<{new (a: number, b: string): 2}, ConstructorParameters.ToEqual<[number, string]>>
+// biome-ignore format: ""
+Expect<{new (a: number, b: string): 2}, ConstructorParameters.Not.ToEqual<[1, string]>>
+
+Expect<typeof One, Instance.ToEqual<One>>
+Expect<typeof One, Instance.Not.ToEqual<Other>>
+
+const promise = Promise.resolve(1 as const)
+Expect<typeof promise, Resolves.ToEqual<1>>
+Expect<typeof promise, Resolves.Not.ToEqual<2>>
+
+Expect<[1, "2", true], Items.ToEqual<1 | "2" | true>>
+Expect<[1, "2", true], Items.Not.ToEqual<number | string | boolean>>
+
+Expect<(input: any) => input is { a: 1 }, Guards.ToEqual<{ a: 1 }>>
+Expect<(input: any) => input is { a: 1 }, Guards.Not.ToEqual<{ a: 2 }>>
+
+Expect<(input: any) => asserts input is { a: 1 }, Asserts.ToEqual<{ a: 1 }>>
+Expect<(input: any) => asserts input is { a: 1 }, Asserts.Not.ToEqual<{ a: 2 }>>
