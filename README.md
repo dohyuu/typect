@@ -3,7 +3,7 @@
 > Documentation is currently being written.  
   The API may change during development as it is still actively being developed.
 
-**Typect** is `Type-Level Testing Framework` based HKT (Higher Kinded Type).
+**Typect** is `Type-Level Testing Framework` based HKT (Higher Kinded Type).  
 I believe the TypeScript compiler is the best test runner. (Just kidding) 
 
 ## Getting Started
@@ -13,7 +13,6 @@ pnpm add typect
 ```
 
 ```typescript
-// examples/nestjs-prisma/src/app.module.ts
 import { Expect, _ } from "typect"
 
 Expect<1, _.ToBeDefined>
