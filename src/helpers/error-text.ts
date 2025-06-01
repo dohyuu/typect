@@ -1,4 +1,4 @@
-export type Text<S extends string, V> = V extends
+export type ErrorText<S extends string, V> = V extends
   | string
   | number
   | bigint
