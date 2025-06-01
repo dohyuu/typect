@@ -59,7 +59,7 @@ Expect<2, Not.ToBeGreaterThan<2>>
 
 Expect<2, To.BeGreaterThanOrEqual<1>>
 Expect<2, To.BeGreaterThanOrEqual<2>>
-Expect<1, Not.To.BeGreaterThanOrEqual<4>>
+Expect<1, Not.ToBeGreaterThanOrEqual<4>>
 
 Expect<[1, 2, 3], To.HaveLength<3>>
 Expect<[1, 2, 3], Not.ToHaveLength<4>>
