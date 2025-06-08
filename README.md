@@ -17,7 +17,7 @@ I believe the TypeScript compiler is the best test runner. (Just kidding)
 
 Typect means "type" + "expect".
 
-## Install
+## Installation
 
 ```bash
 npm add --save-dev typect
@@ -29,9 +29,7 @@ yarn add -D typect
 pnpm add -D typect
 ```
 
-## Example
-
-Load the full matchers
+## Usage
 
 ```typescript
 // Load the full matchers
@@ -40,10 +38,15 @@ import { Expect, _ } from "typect"
 // Load specific matchers
 import { 
   Expect,
+  ToEqual,
   ToBeLessThan,
   Not,
   Returns,
 } from "typect"
+
+
+Expect<'A', ToEqual<'B'>>
+//      ^ Error: Type 'A' does not satisfy the constraint '"to equal B"'
 
 // with specific matchers
 Expect<1, ToBeLessThan<2>>
