@@ -1,6 +1,6 @@
 {
   "name": "typect",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Type-Level Testing Framework",
   "main": "./dist/index.d.ts",
   "module": "./dist/index.d.ts",
