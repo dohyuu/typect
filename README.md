@@ -55,3 +55,67 @@ Expect<GuardFn, _.Guards.ToEqual<{ a: 1 }>>
 type PromiseValue = Promise<1>
 Expect<PromiseValue, _.Resolves.ToEqual<1>>
 ```
+
+## Support Matchers
+
+The goal is to port Jest and Vitest APIs to the type level.
+
+✅ : Supported  
+✖️ : Not Supported (Runtime-only, impossible at type-level)  
+⌛️ : In Progress
+
+| Runtime Matcher (Jest Api)|      |
+|-------------------------|------|
+| soft                    | ✖️    |
+| poll                    | ✖️    |
+| not                     | ✅    |
+| toBe                    | ✅    |
+| toBeCloseTo             | ✖️    |
+| toBeDefined             | ✅    |
+| toBeUndefined           | ✅    |
+| toBeTruthy              | ✅    |
+| toBeFalsy               | ✅    |
+| toBeNull                | ✅    |
+| toBeNaN                 | ✅    |
+| toBeOneOf               | ✅    |
+| toBeTypeOf              | ✅    |
+| toBeInstanceOf          | ✅    |
+| toBeGreaterThan         | ✅    |
+| toBeGreaterThanOrEqual  | ✅    |
+| toBeLessThan            | ✅    |
+| toBeLessThanOrEqual     | ✅    |
+| toEqual                 | ✅    |
+| toStrictEqual           | ✖️    |
+| toContain               | ✅    |
+| toContainEqual          | ✖️    |
+| toHaveLength            | ✅    |
+| toHaveProperty          | ✅    |
+| toMatch                 | ✅    |
+| toMatchObject           | ✖️    |
+
+| Type Matcher (Vitest Api)|      |
+|-------------------------|------|
+| returns                | ✅    |
+| parameters             | ✅    |
+| parameter              | ✅    |
+| constructorParameters  | ✅    |
+| instance               | ✅    |
+| items                  | ✅    |
+| resolves               | ✅    |
+| guards                 | ✅    |
+| asserts                | ✅    |
+| toBeAny                | ⌛️    |
+| toBeUnknown            | ⌛️    |
+| toBeNever              | ⌛️    |
+| toBeFunction           | ⌛️    |
+| toBeObject             | ⌛️    |
+| toBeArray              | ⌛️    |
+| toBeString             | ⌛️    |
+| toBeBoolean            | ⌛️    |
+| toBeVoid               | ⌛️    |
+| toBeSymbol             | ⌛️    |
+| toBeNull               | ⌛️    |
+| toBeUndefined          | ✅    |
+| toBeNullable           | ⌛️    |
+| toBeCallableWith       | ⌛️    |
+| toBeConstructibleWith  | ⌛️    |
