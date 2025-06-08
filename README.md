@@ -1,7 +1,16 @@
-# Typect
-
 > Documentation is currently being written.  
   The API may change during development as it is still actively being developed.
+
+
+# Typect
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/example-image-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/example-image-light.png">
+  <img alt="IMAGE" src="./assets/example-image-dark.png">
+</picture>
+
 
 **Typect** is `Type-Level Testing Framework` based HKT (Higher Kinded Type).  
 I believe the TypeScript compiler is the best test runner. (Just kidding) 
