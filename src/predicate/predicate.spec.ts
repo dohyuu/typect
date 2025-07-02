@@ -11,11 +11,15 @@ import type {
   HasPropertyOnly,
   HasPropertyWith,
 } from "./has-property"
+import type { IsAny } from "./is-any"
+import type { IsFunction } from "./is-function"
 import type { IsInstanceOf } from "./is-instance-of"
 import type { IsNever } from "./is-never"
+import type { IsNullable } from "./is-nullable"
 import type { IsOneOf } from "./is-one-of"
 import type { IsTruthy } from "./is-truthy"
 import type { IsUndefined } from "./is-undefined"
+import type { IsUnknown } from "./is-unknown"
 import type { MatchObject } from "./match-object"
 
 Test<Not<false>>
@@ -93,7 +97,7 @@ Test<
 
 class Sample {}
 class Other {
-  x: string = "x"
+  x = "x"
 }
 const sample = new Sample()
 const other = new Other()
@@ -157,4 +161,58 @@ Test<
   MatchObject<{ a: { x: 1; b: 1 }; b: 2 }, { a: { x: 1 } }>,
   Not<MatchObject<{ a: 1 }, { a: 1; b: 2 }>>,
   Not<MatchObject<{ a: 1 }, { a: 2 }>>
+>
+
+Test<
+  IsAny<any>,
+  Not<IsAny<undefined>>,
+  Not<IsAny<never>>,
+  Not<IsAny<unknown>>,
+  Not<IsAny<true>>,
+  Not<IsAny<false>>,
+  Not<IsAny<null>>,
+  Not<IsAny<void>>,
+  Not<IsAny<0>>,
+  Not<IsAny<"">>,
+  Not<IsAny<[]>>
+>
+
+Test<
+  IsUnknown<unknown>,
+  Not<IsUnknown<undefined>>,
+  Not<IsUnknown<never>>,
+  Not<IsUnknown<any>>,
+  Not<IsAny<true>>,
+  Not<IsAny<false>>,
+  Not<IsAny<null>>,
+  Not<IsAny<void>>,
+  Not<IsAny<0>>,
+  Not<IsAny<"">>,
+  Not<IsAny<[]>>
+>
+
+Test<
+  IsFunction<() => void>,
+  Not<IsFunction<1>>,
+  Not<IsFunction<"">>,
+  Not<IsFunction<[]>>,
+  Not<IsFunction<{}>>,
+  Not<IsFunction<null>>,
+  Not<IsFunction<undefined>>,
+  Not<IsFunction<never>>,
+  Not<IsFunction<unknown>>
+>
+
+Test<
+  IsNullable<null>,
+  IsNullable<undefined>,
+  IsNullable<null | 1>,
+  IsNullable<undefined | 1>,
+  IsNullable<null | undefined>,
+  IsNullable<null | undefined | 1>,
+  Not<IsNullable<never>>,
+  Not<IsNullable<true>>,
+  Not<IsNullable<false>>,
+  Not<IsNullable<number>>,
+  Not<IsNullable<string>>
 >
